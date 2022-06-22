@@ -1,5 +1,6 @@
 const fastify = require("fastify")
 const io = require("socket.io")
+const PORT = 9001
 
 const server = fastify({ http2: false, logger: false })
 
@@ -36,7 +37,7 @@ ioServer.on('connection', (socket) => {
 });
 const build = async () => {
     try {
-        const PORT = parseInt(process.env.PORT);
+        //const PORT = parseInt(process.env.PORT);
         await server.listen(PORT, '0.0.0.0');
         console.info(`server is up and running on ${PORT}`);
     } catch (err) {
