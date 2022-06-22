@@ -2,7 +2,7 @@ const fastify = require("fastify")
 const io = require("socket.io")
 const PORT = 9001
 
-const server = fastify({ http2: false, logger: false })
+const server = fastify({ http2: false, logger: true })
 
 server.register(require("fastify-cors"), {
     origin: true,
